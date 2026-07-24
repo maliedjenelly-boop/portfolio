@@ -3,396 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nelly Maliedje – Data Business Analyst</title>
+    <title>Nelly Maliedje — Data Business Analyst</title>
+    <meta name="description" content="Data Business Analyst spécialisée BI, Python & IA générative. Je transforme la donnée brute en décisions stratégiques.">
+    <meta name="theme-color" content="#08090c">
+    <meta property="og:title" content="Nelly Maliedje — Data Business Analyst">
+    <meta property="og:description" content="Je transforme la donnée en décisions. Power BI · Python · SQL · IA générative.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">NM</div>
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#cerfrance">Cerfrance</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <a href="#top" class="nav-logo">
+                <span class="nav-logo-mark">NM</span>
+                <span class="nav-logo-text">Nelly Maliedje</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#work" class="nav-link">Projets</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#journey" class="nav-link">Parcours</a></li>
+                <li><a href="#contact" class="nav-link nav-link-cta">Contact</a></li>
             </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">Disponible en CDI · Septembre 2026</div>
-            <h1>Nelly Maliedje</h1>
-            <h2>Data Business Analyst</h2>
-            <p class="hero-subtitle">
-                Power BI · Python · SQL · IA générative
-            </p>
-            <p class="hero-description">
-                Data Business Analyst passionnée par la valorisation de la donnée et l'IA. 
-                Je conçois des dashboards, j'automatise des flux et je construis des solutions concrètes. 
-                Builder dans l'âme, je déploie mes projets en ligne.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-                <a href="#contact" class="btn btn-secondary">Me contacter</a>
+    <!-- Hero -->
+    <header class="hero" id="top">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="hero-grid"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+        </div>
+        <div class="container hero-inner">
+            <div class="hero-badge reveal" data-reveal>
+                <span class="badge-dot"></span>
+                Disponible en CDI · Septembre 2026
             </div>
-            <div class="hero-stats">
+
+            <p class="hero-eyebrow reveal" data-reveal data-reveal-delay="1">Nelly Maliedje — Data Business Analyst</p>
+
+            <h1 class="hero-title">
+                <span class="line reveal" data-reveal data-reveal-delay="2">Je transforme la donnée</span>
+                <span class="line reveal" data-reveal data-reveal-delay="3">en <span class="grad">décisions stratégiques.</span></span>
+            </h1>
+
+            <p class="hero-lead reveal" data-reveal data-reveal-delay="4">
+                Data Business Analyst spécialisée Business Intelligence, Python & IA générative.
+                Je conçois des dashboards, j'automatise des flux de données et je déploie des
+                solutions concrètes — de la donnée brute à la décision.
+            </p>
+
+            <div class="hero-actions reveal" data-reveal data-reveal-delay="5">
+                <a href="#work" class="btn btn-primary" data-magnetic>
+                    Voir mes projets
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost" data-magnetic>Me contacter</a>
+            </div>
+
+            <div class="hero-stats reveal" data-reveal data-reveal-delay="6">
                 <div class="stat">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Projets Cerfrance</div>
+                    <div class="stat-number"><span data-count="15" data-suffix="+">0</span></div>
+                    <div class="stat-label">Projets pro livrés</div>
                 </div>
+                <div class="stat-divider"></div>
                 <div class="stat">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Projets GitHub déployés</div>
+                    <div class="stat-number"><span data-count="6">0</span></div>
+                    <div class="stat-label">Projets déployés</div>
                 </div>
+                <div class="stat-divider"></div>
                 <div class="stat">
-                    <div class="stat-number">3</div>
+                    <div class="stat-number"><span data-count="3">0</span></div>
                     <div class="stat-label">Certifications Azure</div>
                 </div>
             </div>
         </div>
+
+        <div class="hero-scroll" aria-hidden="true">
+            <span>Défiler</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- Tools marquee -->
+    <section class="marquee-section" aria-label="Technologies maîtrisées">
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>Power BI</span><span class="dot">•</span>
+                <span>Python</span><span class="dot">•</span>
+                <span>SQL</span><span class="dot">•</span>
+                <span>DAX</span><span class="dot">•</span>
+                <span>Alteryx</span><span class="dot">•</span>
+                <span>Azure</span><span class="dot">•</span>
+                <span>IA générative</span><span class="dot">•</span>
+                <span>Streamlit</span><span class="dot">•</span>
+                <span>Machine Learning</span><span class="dot">•</span>
+                <span>QGIS</span><span class="dot">•</span>
+                <span>Power Automate</span><span class="dot">•</span>
+                <!-- duplicate for seamless loop -->
+                <span>Power BI</span><span class="dot">•</span>
+                <span>Python</span><span class="dot">•</span>
+                <span>SQL</span><span class="dot">•</span>
+                <span>DAX</span><span class="dot">•</span>
+                <span>Alteryx</span><span class="dot">•</span>
+                <span>Azure</span><span class="dot">•</span>
+                <span>IA générative</span><span class="dot">•</span>
+                <span>Streamlit</span><span class="dot">•</span>
+                <span>Machine Learning</span><span class="dot">•</span>
+                <span>QGIS</span><span class="dot">•</span>
+                <span>Power Automate</span><span class="dot">•</span>
+            </div>
+        </div>
     </section>
 
-    <!-- À propos -->
+    <!-- About -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">À propos</h2>
+            <div class="section-head reveal" data-reveal>
+                <span class="section-index">01</span>
+                <h2 class="section-title">À propos</h2>
+            </div>
+
             <div class="about-grid">
-                <div class="about-content">
-                    <p>
-                        Je suis <strong>Data Business Analyst</strong> en alternance chez Cerfrance et en fin de 
-                        <strong>Master 2 Data/IA & Management</strong> à Nexa Digital (Paris).
+                <div class="about-lead reveal" data-reveal>
+                    <p class="about-big">
+                        Ce qui m'anime, c'est le moment précis où une analyse permet à
+                        quelqu'un de <span class="grad">prendre une meilleure décision.</span>
                     </p>
                     <p>
-                        Ce qui m'anime, c'est le moment où une analyse ou un dashboard permet à quelqu'un 
-                        de prendre une meilleure décision. Cette utilité concrète, c'est ce qui donne du sens à mon métier.
+                        Je suis Data Business Analyst en alternance chez <strong>Cerfrance</strong> et en fin de
+                        <strong>Master 2 Data/IA &amp; Management</strong> à Nexa Digital (Paris). Mon terrain de jeu :
+                        traduire des données complexes en tableaux de bord clairs, en automatisations fiables
+                        et en recommandations que le business peut réellement actionner.
                     </p>
                     <p>
-                        Au-delà de mes missions, j'ai déployé plusieurs projets personnels sur mon GitHub : 
-                        chatbot conversationnel LLM, dashboard e-commerce, moteur d'authentification vocale par 
-                        Machine Learning. Je crois qu'on apprend en construisant.
+                        Builder dans l'âme, je ne me contente pas d'analyser : je construis et je déploie.
+                        Chatbot LLM, dashboard e-commerce de bout en bout, moteur d'authentification vocale
+                        par Machine Learning — mes projets vivent en ligne, pas dans un tiroir. Je crois
+                        qu'on apprend vraiment en livrant.
                     </p>
                     <p>
-                        Je suis certifiée <strong>Microsoft Azure</strong> (AZ-900, DP-900, AI-900) et 
-                        l'IA générative (Copilot, ChatGPT, Claude) fait partie de mon workflow quotidien.
+                        Certifiée <strong>Microsoft Azure</strong> (AZ-900, DP-900, AI-900), l'IA générative
+                        (Copilot, ChatGPT, Claude) fait partie de mon workflow quotidien.
                     </p>
                 </div>
-                <div class="about-cards">
-                    <div class="about-card">
-                        <div class="card-icon">🎓</div>
-                        <h3>Formation</h3>
-                        <p><strong>Master 2 Data/IA & Management</strong><br>Nexa Digital, Paris (2024-2026)</p>
-                        <p><strong>Bachelor Data/IA & Business</strong><br>IA School, Paris (2021-2024)</p>
+
+                <aside class="about-panel reveal" data-reveal>
+                    <div class="panel-row">
+                        <span class="panel-key">Rôle</span>
+                        <span class="panel-val">Data Business Analyst</span>
                     </div>
-                    <div class="about-card">
-                        <div class="card-icon">💼</div>
-                        <h3>Expérience</h3>
-                        <p><strong>Data Business Analyst</strong><br>Cerfrance, Troyes (09/2024 - 09/2026)</p>
-                        <p><strong>Web Analyst</strong><br>Orus, Paris (10/2022 - 03/2023)</p>
+                    <div class="panel-row">
+                        <span class="panel-key">Basée à</span>
+                        <span class="panel-val">Troyes / Paris</span>
                     </div>
-                    <div class="about-card">
-                        <div class="card-icon">🏆</div>
-                        <h3>Certifications</h3>
-                        <p><strong>Microsoft Azure Fundamentals</strong> (AZ-900)</p>
-                        <p><strong>Microsoft Data Fundamentals</strong> (DP-900)</p>
-                        <p><strong>Microsoft AI Fundamentals</strong> (AI-900)</p>
+                    <div class="panel-row">
+                        <span class="panel-key">Formation</span>
+                        <span class="panel-val">Master 2 Data/IA · Nexa Digital</span>
                     </div>
-                </div>
+                    <div class="panel-row">
+                        <span class="panel-key">Focus</span>
+                        <span class="panel-val">BI · Automatisation · IA</span>
+                    </div>
+                    <div class="panel-row">
+                        <span class="panel-key">Dispo</span>
+                        <span class="panel-val panel-val-accent">CDI · Sept. 2026</span>
+                    </div>
+                    <div class="panel-tags">
+                        <span class="chip">Power BI</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">SQL</span>
+                        <span class="chip">IA générative</span>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
 
-    <!-- Compétences -->
-    <section id="skills" class="section section-alt">
+    <!-- Work / Projects -->
+    <section id="work" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Compétences techniques</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>📊 Business Intelligence</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Power BI</span>
-                        <span class="tag">DAX avancé</span>
-                        <span class="tag">Power Query</span>
-                        <span class="tag">Modélisation dimensionnelle</span>
-                        <span class="tag">Tableau</span>
-                        <span class="tag">Streamlit</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>💻 Langages</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL avancé</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Google Apps Script</span>
-                        <span class="tag">DAX</span>
-                        <span class="tag">R</span>
-                        <span class="tag">VBA</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>🤖 IA & Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span class="tag">LLM (Google Gemini)</span>
-                        <span class="tag">RAG</span>
-                        <span class="tag">Chatbots</span>
-                        <span class="tag">scikit-learn</span>
-                        <span class="tag">SVM</span>
-                        <span class="tag">Random Forest</span>
-                        <span class="tag">MFCC</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>⚙️ ETL & Automatisation</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Alteryx</span>
-                        <span class="tag">Power Automate</span>
-                        <span class="tag">API REST</span>
-                        <span class="tag">Web Scraping</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>☁️ Cloud</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Azure</span>
-                        <span class="tag">AZ-900</span>
-                        <span class="tag">DP-900</span>
-                        <span class="tag">AI-900</span>
-                        <span class="tag">GCP (notions)</span>
-                        <span class="tag">BigQuery (notions)</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>🗺️ Data Visualisation avancée</h3>
-                    <div class="skill-tags">
-                        <span class="tag">QGIS</span>
-                        <span class="tag">Cartes personnalisées</span>
-                        <span class="tag">Plotly</span>
-                        <span class="tag">Data Storytelling</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projets Cerfrance -->
-    <section id="cerfrance" class="section">
-        <div class="container">
-            <h2 class="section-title">Projets professionnels — Cerfrance</h2>
-            <p class="section-subtitle">
-                Data Business Analyst en alternance | Réseau d'expertise comptable et conseil aux entreprises agricoles
-            </p>
-
-            <div class="project-category">
-                <h3 class="category-title">📊 Business Intelligence & Dashboards Power BI</h3>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · DAX</div>
-                        <h4>Analyse des dossiers perdus</h4>
-                        <p>Identification des facteurs explicatifs et recommandations business à partir de deux années de données.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · Analyse territoriale</div>
-                        <h4>Créations d'entreprises & démographie</h4>
-                        <p>Analyse croisée des créations d'entreprises et de la démographie sur les territoires stratégiques.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · Marché</div>
-                        <h4>Analyse sectorielle marché</h4>
-                        <p>Dashboard dédié à l'analyse d'un marché stratégique pour appuyer les décisions commerciales.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · Agriculture</div>
-                        <h4>Analyse des rendements 2025</h4>
-                        <p>Croisement multi-sources et visualisations territoriales des rendements agricoles.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · Logistique</div>
-                        <h4>Analyse de la base distancier</h4>
-                        <p>Analyse BI de la base distancier clients/agences pour l'optimisation logistique et le pilotage.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · Storytelling</div>
-                        <h4>Présentation pour réunions conjoncture</h4>
-                        <p>Conception d'une présentation Power BI dédiée aux réunions conjoncture économique.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · Innovation</div>
-                        <h4>Cartes personnalisées Power BI</h4>
-                        <p>Développement d'une solution custom pour la création de cartes personnalisées dans Power BI.</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · UX</div>
-                        <h4>Ergonomie d'un projet BI transverse</h4>
-                        <p>Contribution à l'ergonomie et au design d'un projet BI transverse (nombreuses propositions retenues).</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-tag">Power BI · Publication</div>
-                        <h4>Processus de publication BI</h4>
-                        <p>Compréhension et documentation du processus de publication des rapports Power BI au sein de l'Atelier des Études.</p>
-                    </div>
-                </div>
+            <div class="section-head reveal" data-reveal>
+                <span class="section-index">02</span>
+                <h2 class="section-title">Projets phares</h2>
+                <p class="section-desc">
+                    Des projets pensés comme des études de cas : un problème réel, une solution construite,
+                    un impact mesurable.
+                </p>
             </div>
 
-            <div class="project-category">
-                <h3 class="category-title">⚙️ Data Engineering & ETL (Alteryx)</h3>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-tag">Alteryx · ETL</div>
-                        <h4>Historisation de l'analyse de groupe</h4>
-                        <p>Construction d'un flux Alteryx : calcul du coefficient d'érosion monétaire, tables de correspondance, création de nouvelles variables métier.</p>
+            <!-- Case studies -->
+            <div class="cases">
+                <!-- Case 1 -->
+                <article class="case reveal" data-reveal data-spotlight>
+                    <div class="case-media">
+                        <span class="case-emoji">🛒</span>
+                        <div class="case-metrics">
+                            <div class="case-metric">
+                                <div class="cm-num"><span data-count="96478" data-format="fr">0</span></div>
+                                <div class="cm-label">commandes analysées</div>
+                            </div>
+                            <div class="case-metric case-metric-accent">
+                                <div class="cm-num">3,9M<span class="cm-unit">BRL</span></div>
+                                <div class="cm-label">CA récupérable identifié</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-tag">Alteryx · Data Warehouse</div>
-                        <h4>Connexion Data Warehouse ↔ Alteryx</h4>
-                        <p>Mise en place de la connexion entre le Data Warehouse et Alteryx pour l'automatisation des flux de données.</p>
+                    <div class="case-body">
+                        <div class="case-tags">
+                            <span class="tag">Python</span><span class="tag">Pandas</span>
+                            <span class="tag">Plotly</span><span class="tag">Streamlit</span>
+                        </div>
+                        <h3 class="case-title">Olist — Analyse e-commerce de bout en bout</h3>
+                        <ul class="case-steps">
+                            <li><span class="step-key">Problème</span> Comprendre pourquoi le CA stagne et où se cache la valeur perdue.</li>
+                            <li><span class="step-key">Solution</span> Pipeline complet : nettoyage, EDA, segmentation client RFM, carte choroplèthe, dashboard Streamlit 5 pages.</li>
+                            <li><span class="step-key">Impact</span> 14 015 clients à risque identifiés = 3,9 M BRL de chiffre d'affaires récupérable.</li>
+                        </ul>
+                        <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="case-link">Voir le projet
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
                     </div>
-                    <div class="project-card">
-                        <div class="project-tag">Alteryx · Data Cleaning</div>
-                        <h4>Nettoyage base rendements 2024</h4>
-                        <p>Nettoyage et consolidation : regroupement des données cultures, rendements et surfaces par territoire.</p>
+                </article>
+
+                <!-- Case 2 -->
+                <article class="case case-reverse reveal" data-reveal data-spotlight>
+                    <div class="case-media case-media-alt">
+                        <span class="case-emoji">📊</span>
+                        <div class="case-metrics">
+                            <div class="case-metric">
+                                <div class="cm-num"><span data-count="20" data-suffix="+">0</span></div>
+                                <div class="cm-label">mesures DAX avancées</div>
+                            </div>
+                            <div class="case-metric case-metric-accent">
+                                <div class="cm-num">−105$</div>
+                                <div class="cm-label">marge sur remises ≥ 50%</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="case-body">
+                        <div class="case-tags">
+                            <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span>
+                        </div>
+                        <h3 class="case-title">Retail Analytics — Global Superstore</h3>
+                        <ul class="case-steps">
+                            <li><span class="step-key">Problème</span> Piloter la performance retail sur 9 994 commandes et fiabiliser la politique de remise.</li>
+                            <li><span class="step-key">Solution</span> Dashboard Power BI 4 pages, 20+ mesures DAX (YoY, YTD, RFM, ranking clients).</li>
+                            <li><span class="step-key">Impact</span> Insight actionnable : les remises ≥ 50% détruisent la marge (−105$ de profit moyen).</li>
+                        </ul>
+                        <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="case-link">Voir le projet
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </article>
             </div>
 
-            <div class="project-category">
-                <h3 class="category-title">🗺️ Géomatique & Analyse territoriale</h3>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-tag">QGIS · Cartographie</div>
-                        <h4>Résultat économique par canton</h4>
-                        <p>Représentation cartographique sur QGIS du résultat économique par canton pour l'analyse territoriale.</p>
-                    </div>
-                </div>
+            <!-- Other GitHub projects -->
+            <div class="subhead reveal" data-reveal>
+                <h3>Autres projets déployés</h3>
+                <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="subhead-link">
+                    Tout voir sur GitHub
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
             </div>
 
-            <div class="project-category">
-                <h3 class="category-title">🤖 Automatisation & IA</h3>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-tag">Infogram · Automatisation</div>
-                        <h4>Automatisation dashboards Infogram</h4>
-                        <p>Mise en place de l'automatisation des dashboards Infogram pour la diffusion régulière d'analyses.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-category">
-                <h3 class="category-title">📈 Analyses avancées Excel</h3>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-tag">Excel · Analyse</div>
-                        <h4>Analyse des lettres de missions</h4>
-                        <p>Structuration et analyse Excel avancée des lettres de missions : croisements et enseignements business.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projets GitHub -->
-    <section id="projects" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Projets personnels — GitHub</h2>
-            <p class="section-subtitle">
-                Projets construits et déployés en autonomie · 
-                <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener">Voir tous mes projets sur GitHub →</a>
-            </p>
-
-            <div class="github-grid">
-                <div class="github-card">
-                    <div class="github-icon">🤖</div>
-                    <div class="github-tag">Python · Streamlit · Google Gemini API</div>
-                    <h3>Chatbot – Assistant conversationnel</h3>
-                    <p>Assistant conversationnel virtuel avec FAQ personnalisable, intégration de l'API Google Gemini, déployé en ligne. Gestion du contexte et personnalisation des réponses.</p>
-                    <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="github-link">Voir sur GitHub →</a>
-                </div>
-
-                <div class="github-card">
-                    <div class="github-icon">🛒</div>
-                    <div class="github-tag">Python · Pandas · Plotly · Streamlit</div>
-                    <h3>Olist Dashboard – Analyse e-commerce</h3>
-                    <p>Projet d'analyse de bout en bout : nettoyage, EDA, segmentation client RFM, carte choroplèthe, dashboard Streamlit 5 pages. 96 478 commandes analysées, 14 015 clients à risque identifiés = 3,9M BRL de CA récupérable.</p>
-                    <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="github-link">Voir sur GitHub →</a>
-                </div>
-
-                <div class="github-card">
-                    <div class="github-icon">📊</div>
-                    <div class="github-tag">Power BI · DAX · Power Query</div>
-                    <h3>Retail Analytics – Global Superstore</h3>
-                    <p>Dashboard Power BI 4 pages sur 9 994 commandes, 20+ mesures DAX avancées (YoY, YTD, RFM, ranking clients). Insight actionnable : les remises ≥ 50% détruisent la marge (-105$ de profit moyen).</p>
-                    <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="github-link">Voir sur GitHub →</a>
-                </div>
-
-                <div class="github-card">
-                    <div class="github-icon">🎙️</div>
-                    <div class="github-tag">Python · Librosa · scikit-learn</div>
-                    <h3>VoiceGuard – Authentification vocale</h3>
-                    <p>Moteur d'authentification vocale basé sur le traitement du signal (extraction de features MFCC) et des modèles de Machine Learning (SVM, Random Forest) pour la classification.</p>
-                    <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="github-link">Voir sur GitHub →</a>
-                </div>
-
-                <div class="github-card">
-                    <div class="github-icon">🏪</div>
-                    <div class="github-tag">Python · Data Analysis</div>
-                    <h3>NovaRetail – Tableau de bord retail</h3>
-                    <p>Tableau de bord interactif dédié à l'analyse retail : indicateurs de performance et visualisations dynamiques.</p>
-                    <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="github-link">Voir sur GitHub →</a>
-                </div>
-
-                <div class="github-card">
-                    <div class="github-icon">📰</div>
-                    <div class="github-tag">Python · scikit-learn · Streamlit</div>
-                    <h3>FCO Detection IA – Détection Fake News</h3>
+            <div class="cards-grid">
+                <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="card reveal" data-reveal data-spotlight>
+                    <div class="card-top"><span class="card-emoji">🤖</span><span class="card-arrow">↗</span></div>
+                    <h4>Chatbot — Assistant conversationnel</h4>
+                    <p>Assistant virtuel avec FAQ personnalisable et gestion du contexte, propulsé par l'API Google Gemini. Déployé en ligne.</p>
+                    <div class="card-tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Gemini API</span></div>
+                </a>
+                <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="card reveal" data-reveal data-spotlight>
+                    <div class="card-top"><span class="card-emoji">🎙️</span><span class="card-arrow">↗</span></div>
+                    <h4>VoiceGuard — Authentification vocale</h4>
+                    <p>Moteur d'authentification par la voix : extraction de features MFCC et classification par Machine Learning (SVM, Random Forest).</p>
+                    <div class="card-tags"><span class="tag">Librosa</span><span class="tag">scikit-learn</span><span class="tag">Signal</span></div>
+                </a>
+                <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="card reveal" data-reveal data-spotlight>
+                    <div class="card-top"><span class="card-emoji">📰</span><span class="card-arrow">↗</span></div>
+                    <h4>FCO Detection — Détection de Fake News</h4>
                     <p>Pipeline ML complète : collecte, prétraitement, vectorisation TF-IDF, classification SVM. Application Streamlit déployée en ligne.</p>
-                    <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="github-link">Voir sur GitHub →</a>
+                    <div class="card-tags"><span class="tag">NLP</span><span class="tag">TF-IDF</span><span class="tag">SVM</span></div>
+                </a>
+                <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="card reveal" data-reveal data-spotlight>
+                    <div class="card-top"><span class="card-emoji">🏪</span><span class="card-arrow">↗</span></div>
+                    <h4>NovaRetail — Tableau de bord retail</h4>
+                    <p>Tableau de bord interactif dédié à l'analyse retail : indicateurs de performance et visualisations dynamiques.</p>
+                    <div class="card-tags"><span class="tag">Python</span><span class="tag">Data Analysis</span></div>
+                </a>
+            </div>
+
+            <!-- Cerfrance professional work -->
+            <div class="subhead reveal" data-reveal>
+                <h3>Missions professionnelles — Cerfrance</h3>
+                <span class="subhead-note">Data Business Analyst · Expertise comptable &amp; conseil aux entreprises agricoles</span>
+            </div>
+
+            <div class="cerf-grid">
+                <div class="cerf-col reveal" data-reveal>
+                    <div class="cerf-cat"><span class="cerf-cat-icon">📊</span> Business Intelligence &amp; Power BI</div>
+                    <ul class="cerf-list">
+                        <li><strong>Analyse des dossiers perdus</strong> — facteurs explicatifs et recommandations business sur 2 ans de données.</li>
+                        <li><strong>Créations d'entreprises &amp; démographie</strong> — analyse croisée sur les territoires stratégiques.</li>
+                        <li><strong>Analyse sectorielle marché</strong> — dashboard d'aide à la décision commerciale.</li>
+                        <li><strong>Rendements agricoles 2025</strong> — croisement multi-sources et visualisations territoriales.</li>
+                        <li><strong>Base distancier</strong> — optimisation logistique clients/agences et pilotage.</li>
+                        <li><strong>Cartes personnalisées Power BI</strong> — solution custom de cartographie embarquée.</li>
+                    </ul>
+                </div>
+                <div class="cerf-col reveal" data-reveal>
+                    <div class="cerf-cat"><span class="cerf-cat-icon">⚙️</span> Data Engineering &amp; ETL — Alteryx</div>
+                    <ul class="cerf-list">
+                        <li><strong>Historisation de l'analyse de groupe</strong> — flux Alteryx : coefficient d'érosion monétaire, tables de correspondance, variables métier.</li>
+                        <li><strong>Connexion Data Warehouse ↔ Alteryx</strong> — automatisation des flux de données.</li>
+                        <li><strong>Nettoyage base rendements 2024</strong> — consolidation cultures, rendements et surfaces par territoire.</li>
+                    </ul>
+                    <div class="cerf-cat cerf-cat-mt"><span class="cerf-cat-icon">🗺️</span> Géomatique &amp; Automatisation</div>
+                    <ul class="cerf-list">
+                        <li><strong>Cartographie QGIS</strong> — résultat économique par canton pour l'analyse territoriale.</li>
+                        <li><strong>Automatisation dashboards Infogram</strong> — diffusion régulière d'analyses.</li>
+                        <li><strong>Analyse des lettres de missions</strong> — Excel avancé : croisements et enseignements business.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-head reveal" data-reveal>
+                <span class="section-index">03</span>
+                <h2 class="section-title">Compétences</h2>
+                <p class="section-desc">Une stack complète, de la collecte de la donnée jusqu'à la décision business.</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-block reveal" data-reveal data-spotlight>
+                    <div class="skill-num">01</div>
+                    <h3>Business Intelligence</h3>
+                    <p class="skill-desc">Concevoir des dashboards qui racontent une histoire et guident l'action.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Power BI</span><span class="tag">DAX avancé</span><span class="tag">Power Query</span>
+                        <span class="tag">Modélisation dimensionnelle</span><span class="tag">Tableau</span><span class="tag">Streamlit</span>
+                    </div>
+                </div>
+                <div class="skill-block reveal" data-reveal data-spotlight>
+                    <div class="skill-num">02</div>
+                    <h3>Data &amp; Langages</h3>
+                    <p class="skill-desc">Manipuler, transformer et interroger la donnée à grande échelle.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span><span class="tag">SQL avancé</span><span class="tag">R</span>
+                        <span class="tag">JavaScript</span><span class="tag">Apps Script</span><span class="tag">VBA</span>
+                    </div>
+                </div>
+                <div class="skill-block reveal" data-reveal data-spotlight>
+                    <div class="skill-num">03</div>
+                    <h3>IA &amp; Machine Learning</h3>
+                    <p class="skill-desc">De l'IA générative aux modèles ML supervisés déployés en production.</p>
+                    <div class="skill-tags">
+                        <span class="tag">LLM &amp; RAG</span><span class="tag">Chatbots</span><span class="tag">scikit-learn</span>
+                        <span class="tag">SVM</span><span class="tag">Random Forest</span><span class="tag">MFCC</span>
+                    </div>
+                </div>
+                <div class="skill-block reveal" data-reveal data-spotlight>
+                    <div class="skill-num">04</div>
+                    <h3>ETL &amp; Automatisation</h3>
+                    <p class="skill-desc">Fiabiliser et industrialiser les flux de données répétitifs.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Alteryx</span><span class="tag">Power Automate</span><span class="tag">API REST</span><span class="tag">Web Scraping</span>
+                    </div>
+                </div>
+                <div class="skill-block reveal" data-reveal data-spotlight>
+                    <div class="skill-num">05</div>
+                    <h3>Cloud — Azure</h3>
+                    <p class="skill-desc">Certifiée sur les fondamentaux Cloud, Data et IA de Microsoft.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Azure AZ-900</span><span class="tag">DP-900</span><span class="tag">AI-900</span>
+                        <span class="tag">GCP (notions)</span><span class="tag">BigQuery (notions)</span>
+                    </div>
+                </div>
+                <div class="skill-block reveal" data-reveal data-spotlight>
+                    <div class="skill-num">06</div>
+                    <h3>Dataviz &amp; Storytelling</h3>
+                    <p class="skill-desc">Rendre la donnée lisible, cartographiée et convaincante.</p>
+                    <div class="skill-tags">
+                        <span class="tag">QGIS</span><span class="tag">Cartes personnalisées</span><span class="tag">Plotly</span><span class="tag">Data Storytelling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey / Timeline -->
+    <section id="journey" class="section section-alt">
+        <div class="container">
+            <div class="section-head reveal" data-reveal>
+                <span class="section-index">04</span>
+                <h2 class="section-title">Parcours</h2>
+                <p class="section-desc">L'impact business avant la liste des tâches.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="tl-item reveal" data-reveal>
+                    <div class="tl-marker"></div>
+                    <div class="tl-content">
+                        <div class="tl-meta"><span class="tl-date">09/2024 — 09/2026</span><span class="tl-badge">Alternance</span></div>
+                        <h3>Data Business Analyst — Cerfrance, Troyes</h3>
+                        <p>Au cœur de l'Atelier des Études : 15+ dashboards Power BI livrés, flux ETL Alteryx industrialisés et automatisations qui font gagner un temps précieux aux équipes conseil. Mes analyses éclairent les décisions commerciales et territoriales du réseau.</p>
+                    </div>
+                </div>
+                <div class="tl-item reveal" data-reveal>
+                    <div class="tl-marker"></div>
+                    <div class="tl-content">
+                        <div class="tl-meta"><span class="tl-date">10/2022 — 03/2023</span><span class="tl-badge">Stage</span></div>
+                        <h3>Web Analyst — Orus, Paris</h3>
+                        <p>Analyse de la performance web et suivi des indicateurs d'acquisition pour éclairer les décisions marketing d'une startup assurtech.</p>
+                    </div>
+                </div>
+                <div class="tl-item reveal" data-reveal>
+                    <div class="tl-marker"></div>
+                    <div class="tl-content">
+                        <div class="tl-meta"><span class="tl-date">2024 — 2026</span><span class="tl-badge tl-badge-alt">Formation</span></div>
+                        <h3>Master 2 Data/IA &amp; Management — Nexa Digital, Paris</h3>
+                        <p>Spécialisation à l'intersection de la data science, de l'IA et du pilotage de projet business.</p>
+                    </div>
+                </div>
+                <div class="tl-item reveal" data-reveal>
+                    <div class="tl-marker"></div>
+                    <div class="tl-content">
+                        <div class="tl-meta"><span class="tl-date">2021 — 2024</span><span class="tl-badge tl-badge-alt">Formation</span></div>
+                        <h3>Bachelor Data/IA &amp; Business — IA School, Paris</h3>
+                        <p>Fondamentaux data, programmation et culture business. Certifications Microsoft Azure AZ-900, DP-900 et AI-900 obtenues en parallèle.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title">Me contacter</h2>
-            <p class="section-subtitle">
-                Disponible pour un CDI à partir de septembre 2026 · Ouverte aux opportunités BI, Data, IA
-            </p>
-            <div class="contact-grid">
-                <a href="mailto:maliedjenelly@yahoo.com" class="contact-card">
-                    <div class="contact-icon">✉️</div>
-                    <h3>Email</h3>
-                    <p>maliedjenelly@yahoo.com</p>
-                </a>
-                <a href="https://www.linkedin.com/in/nelly-maliedje" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">💼</div>
-                    <h3>LinkedIn</h3>
-                    <p>nelly-maliedje</p>
-                </a>
-                <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">💻</div>
-                    <h3>GitHub</h3>
-                    <p>maliedjenelly-boop</p>
-                </a>
-                <a href="tel:+33767774637" class="contact-card">
-                    <div class="contact-icon">📱</div>
-                    <h3>Téléphone</h3>
-                    <p>07 67 77 46 37</p>
-                </a>
+            <div class="contact-inner reveal" data-reveal>
+                <span class="section-index section-index-center">05</span>
+                <h2 class="contact-title">Construisons quelque chose <span class="grad">qui a de l'impact.</span></h2>
+                <p class="contact-lead">
+                    Disponible pour un CDI à partir de septembre 2026, ouverte aux opportunités
+                    BI, Data &amp; IA. Discutons de votre prochain défi data.
+                </p>
+                <a href="mailto:maliedjenelly@yahoo.com" class="contact-mail" data-magnetic>maliedjenelly@yahoo.com</a>
+
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/nelly-maliedje" target="_blank" rel="noopener" class="contact-chip" data-magnetic>LinkedIn</a>
+                    <a href="https://github.com/maliedjenelly-boop" target="_blank" rel="noopener" class="contact-chip" data-magnetic>GitHub</a>
+                    <a href="tel:+33767774637" class="contact-chip" data-magnetic>07 67 77 46 37</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 Nelly Maliedje · Data Business Analyst · Fait avec ❤️ et beaucoup de café</p>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span>© 2026 Nelly Maliedje</span>
+            <span class="footer-mid">Data Business Analyst</span>
+            <a href="#top" class="footer-top">Haut de page ↑</a>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
