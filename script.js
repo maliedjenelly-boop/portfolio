@@ -153,4 +153,89 @@
       el.addEventListener('mouseleave', function () { el.style.transform = ''; });
     });
   }
+
+  /* ---- "Monde data" : fond anime (courbes + barres) dans le hero ---- */
+  (function initDataWorld() {
+    const canvas = document.getElementById('heroData');
+    if (!canvas || !canvas.getContext) return;
+    const ctx = canvas.getContext('2d');
+
+    const css = getComputedStyle(document.documentElement);
+    function hexToRgb(h) {
+      h = (h || '').trim().replace('#', '');
+      if (h.length === 3) h = h.split('').map(function (c) { return c + c; }).join('');
+      const n = parseInt(h || '9d4edd', 16);
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    }
+    const A = hexToRgb(css.getPropertyValue('--accent') || '#9d4edd');
+    const B = hexToRgb(css.getPropertyValue('--accent-2') || '#c77dff');
+    const rgba = function (c, a) { return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a + ')'; };
+
+    let W = 0, H = 0;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function resize() {
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = Math.max(1, W * dpr); canvas.height = Math.max(1, H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const barW = 26, gap = 16;
+    function draw(t) {
+      ctx.clearRect(0, 0, W, H);
+
+      // --- Bar chart (bas du hero) ---
+      const count = Math.ceil(W / (barW + gap)) + 1;
+      const baseY = H * 0.9;
+      const maxH = H * 0.4;
+      for (let i = 0; i < count; i++) {
+        const x = i * (barW + gap);
+        const seed = Math.sin(i * 12.9898) * 43758.5453;
+        const rnd = seed - Math.floor(seed);
+        const h = (0.16 + 0.84 * Math.abs(Math.sin(t * 0.0006 + i * 0.55 + rnd * 6.28))) * maxH * (0.45 + rnd * 0.55);
+        const y = baseY - h, r = 4;
+        const g = ctx.createLinearGradient(0, y, 0, baseY);
+        g.addColorStop(0, rgba(A, 0.18));
+        g.addColorStop(1, rgba(A, 0.01));
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.moveTo(x, baseY); ctx.lineTo(x, y + r);
+        ctx.quadraticCurveTo(x, y, x + r, y);
+        ctx.lineTo(x + barW - r, y);
+        ctx.quadraticCurveTo(x + barW, y, x + barW, y + r);
+        ctx.lineTo(x + barW, baseY); ctx.closePath(); ctx.fill();
+      }
+
+      // --- Line charts (courbes qui ondulent) ---
+      const series = [
+        { col: A, amp: H * 0.10, mid: H * 0.40, f1: 0.0055, f2: 0.013, sp: 0.0011, w: 1.6, a: 0.55 },
+        { col: B, amp: H * 0.075, mid: H * 0.54, f1: 0.0072, f2: 0.017, sp: -0.0015, w: 1.4, a: 0.45 }
+      ];
+      series.forEach(function (s) {
+        ctx.beginPath();
+        for (let x = 0; x <= W; x += 6) {
+          const y = s.mid + s.amp * (Math.sin(x * s.f1 + t * s.sp) + 0.5 * Math.sin(x * s.f2 - t * s.sp * 1.6));
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = rgba(s.col, s.a);
+        ctx.lineWidth = s.w;
+        ctx.shadowColor = rgba(s.col, 0.5); ctx.shadowBlur = 8;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+        // point de donnée qui se déplace
+        const px = (t * 0.055) % W;
+        const py = s.mid + s.amp * (Math.sin(px * s.f1 + t * s.sp) + 0.5 * Math.sin(px * s.f2 - t * s.sp * 1.6));
+        ctx.beginPath(); ctx.arc(px, py, 2.6, 0, 6.283);
+        ctx.fillStyle = rgba(s.col, 0.9); ctx.fill();
+      });
+    }
+
+    if (prefersReduced) { draw(0); return; }
+    let last = 0;
+    (function loop(now) {
+      if (now - last > 33) { draw(now); last = now; }  // ~30 fps
+      requestAnimationFrame(loop);
+    })(0);
+  })();
 })();
