@@ -179,7 +179,7 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
     resize();
-    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('resize', function () { resize(); draw(performance.now()); }, { passive: true });
 
     const barW = 26, gap = 16;
     function draw(t) {
@@ -231,11 +231,16 @@
       });
     }
 
-    if (prefersReduced) { draw(0); return; }
+    draw(performance.now());          // image initiale immédiate (avant l'animation)
+    if (prefersReduced) return;
     let last = 0;
     (function loop(now) {
       if (now - last > 33) { draw(now); last = now; }  // ~30 fps
       requestAnimationFrame(loop);
     })(0);
+    // redessine en reprenant le focus (rAF est en pause quand l'onglet est masqué)
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) draw(performance.now());
+    });
   })();
 })();
