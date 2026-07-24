@@ -1,6 +1,6 @@
 # Portfolio — Nelly Maliedje
 
-Portfolio personnel de **Nelly Maliedje**, Data Business Analyst.
+Portfolio personnel de **Nelly Maliedje**, Data & AI Consultant (BI Analytics · Automatisation & IA).
 Design premium, dark & éditorial (direction artistique « Signal »).
 
 **Site en ligne :** https://maliedjenelly-boop.github.io/portfolio/
