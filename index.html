@@ -318,6 +318,39 @@
                         </a>
                     </div>
                 </article>
+
+                <!-- Case 4 — FCO (projet M2) -->
+                <article class="case case-reverse reveal" data-reveal data-spotlight>
+                    <div class="case-media case-media-alt">
+                        <span class="case-emoji">🐑</span>
+                        <div class="case-metrics">
+                            <div class="case-metric">
+                                <div class="cm-num">97,9<span class="cm-unit">%</span></div>
+                                <div class="cm-label">précision — détection labo (Random Forest)</div>
+                            </div>
+                            <div class="case-metric case-metric-accent">
+                                <div class="cm-num">2<span class="cm-unit">volets IA</span></div>
+                                <div class="cm-label">labo (charge virale) + image (EfficientNet)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-tags">
+                            <span class="tag">Python</span><span class="tag">PyTorch</span>
+                            <span class="tag">EfficientNet</span><span class="tag">Random Forest</span>
+                            <span class="tag">Grad-CAM</span><span class="tag">SQL</span><span class="tag">Streamlit</span>
+                        </div>
+                        <h3 class="case-title">FCO — Détection de la fièvre catarrhale ovine (projet M2)</h3>
+                        <ul class="case-steps">
+                            <li><span class="step-key">Problème</span> Détecter tôt la fièvre catarrhale ovine (Bluetongue), côté laboratoire (charge virale du moucheron vecteur) comme côté éleveur (symptômes visibles).</li>
+                            <li><span class="step-key">Solution</span> Pipeline hybride &amp; reproductible : Random Forest sur la charge virale (copies du génome BTV), classification d'images EfficientNet-B0 (prétraitement CLAHE) explicable par Grad-CAM, base de données relationnelle (RGPD, charte éthique) et application Streamlit multi-pages.</li>
+                            <li><span class="step-key">Impact</span> 97,9% de précision en détection labo, un diagnostic image explicable et un audit anti-biais du jeu de données — une démarche honnête, de la donnée brute à l'outil déployé.</li>
+                        </ul>
+                        <a href="https://github.com/maliedjenelly-boop/fco-detection-ia" target="_blank" rel="noopener" class="case-link">Voir le projet
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </article>
             </div>
 
             <!-- Other GitHub projects -->
@@ -341,12 +374,6 @@
                     <h4>VoiceGuard — Authentification vocale</h4>
                     <p>Moteur d'authentification par la voix : extraction de features MFCC et classification par Machine Learning (SVM, Random Forest).</p>
                     <div class="card-tags"><span class="tag">Librosa</span><span class="tag">scikit-learn</span><span class="tag">Signal</span></div>
-                </a>
-                <a href="https://github.com/maliedjenelly-boop/fco-detection-ia" target="_blank" rel="noopener" class="card reveal" data-reveal data-spotlight>
-                    <div class="card-top"><span class="card-emoji">🐑</span><span class="card-arrow">↗</span></div>
-                    <h4>FCO — Détection de la fièvre catarrhale ovine</h4>
-                    <p>Projet de Machine Learning pour la détection de la fièvre catarrhale ovine (FCO), maladie virale des ruminants — à la croisée de la data et de l'expertise agricole.</p>
-                    <div class="card-tags"><span class="tag">Python</span><span class="tag">Machine Learning</span></div>
                 </a>
                 <a href="https://github.com/maliedjenelly-boop/novaretail" target="_blank" rel="noopener" class="card reveal" data-reveal data-spotlight>
                     <div class="card-top"><span class="card-emoji">🏪</span><span class="card-arrow">↗</span></div>
