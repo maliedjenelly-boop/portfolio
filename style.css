@@ -590,7 +590,7 @@ a { color: inherit; text-decoration: none; }
     .about-panel { position: static; }
     .case, .case-reverse { grid-template-columns: 1fr; }
     .case-reverse .case-media { order: 0; }
-    .case-media, .case-media-alt { border-right: none; border-left: none; border-bottom: 1px solid var(--border); min-height: 240px; }
+    .case-media, .case-media-alt { border-right: none; border-left: none; border-bottom: 1px solid var(--border); min-height: 300px; }
     .cerf-grid { grid-template-columns: 1fr; }
 }
 
