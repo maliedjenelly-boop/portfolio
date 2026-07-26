@@ -17,9 +17,9 @@
     --border-strong: rgba(88, 42, 140, 0.26);
 
     /* Text */
-    --text:   #241a33;
-    --text-2: #574f66;
-    --text-3: #6b6284;
+    --text:   #100b18;
+    --text-2: #241d31;
+    --text-3: #4a4260;
 
     /* Accent — violet (bannière LinkedIn), contrasté sur fond clair */
     --accent:      #8a35d1;
