@@ -343,13 +343,14 @@
                         <div class="case-tags">
                             <span class="tag">Python</span><span class="tag">PyTorch</span>
                             <span class="tag">EfficientNet</span><span class="tag">Random Forest</span>
-                            <span class="tag">Grad-CAM</span><span class="tag">SQL</span><span class="tag">Streamlit</span>
+                            <span class="tag">Grad-CAM</span><span class="tag">SQL</span>
+                            <span class="tag">Streamlit</span><span class="tag">Stripe</span>
                         </div>
                         <h3 class="case-title">FCO · Détection de la fièvre catarrhale ovine (projet M2)</h3>
                         <ul class="case-steps">
                             <li><span class="step-key">Problème</span> Détecter tôt la fièvre catarrhale ovine (Bluetongue), côté laboratoire (charge virale du moucheron vecteur) comme côté éleveur (symptômes visibles).</li>
-                            <li><span class="step-key">Solution</span> Pipeline hybride &amp; reproductible : Random Forest sur la charge virale (copies du génome BTV), classification d'images EfficientNet-B0 (prétraitement CLAHE) explicable par Grad-CAM, base de données relationnelle (RGPD, charte éthique) et application Streamlit multi-pages.</li>
-                            <li><span class="step-key">Impact</span> 97,9% de précision en détection labo, un diagnostic image explicable et un audit anti-biais du jeu de données : une démarche honnête, de la donnée brute à l'outil déployé.</li>
+                            <li><span class="step-key">Solution</span> Pipeline hybride et reproductible : Random Forest sur la charge virale (copies du génome BTV) et classification d'images EfficientNet-B0 par transfer learning (prétraitement CLAHE), rendue explicable par Grad-CAM. Couche données SQLite/MySQL conforme RGPD, et application Streamlit multi-pages avec authentification par rôles et module d'abonnement (paiement Stripe).</li>
+                            <li><span class="step-key">Impact</span> 97,9% de précision en détection labo, un diagnostic image explicable, et un jeu d'images assaini à 108 clichés après audit anti-biais. Un projet mené jusqu'au produit déployé en continu, pas seulement jusqu'au modèle.</li>
                         </ul>
                         <a href="https://github.com/maliedjenelly-boop/fco-detection-ia" target="_blank" rel="noopener" class="case-link">Voir le projet
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
