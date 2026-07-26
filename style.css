@@ -558,7 +558,12 @@ a { color: inherit; text-decoration: none; }
     border-bottom: 1px solid var(--border-strong); transition: border-color 0.3s;
 }
 .contact-mail:hover { border-color: var(--accent); }
-.contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 40px; }
+.contact-cv {
+    display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 38px;
+}
+.contact-cv-note { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-3); }
+
+.contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
 .contact-chip {
     font-family: var(--font-mono); font-size: 13px; color: var(--text-2);
     padding: 11px 22px; border: 1px solid var(--border-strong); border-radius: 999px;
